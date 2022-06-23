@@ -1,0 +1,30 @@
+.whyus-box {
+  @include section-base;
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.14rem;
+  }
+  .whyus-box__list {
+    margin: 40px 0;
+    .whyus-box--item {
+      max-width: 75%;
+      h3 {
+        text-transform: uppercase;
+        font-size: 1.14rem;
+      }
+    }
+  }
+  .whyus-box__button {
+    text-align: center;
+    
+    a {
+      border: 2px solid #e6e6e6;
+      color: #000;
+      font-size: 1.14rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding:10px 50px;
+    }
+  }
+}

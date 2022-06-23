@@ -1,0 +1,48 @@
+.banner-box {
+  position: relative;
+  .banner-box__inner {
+    img {
+      width: 100%;
+    }
+  }
+  .banner-box__controls {
+    .banner-box__controls--prev{
+      @include vertical-middle;
+      left: 71px;
+      @include arrow-button();
+    }
+    .banner-box__controls--next{
+      @include vertical-middle;
+      right: 71px;
+      @include arrow-button();
+    }
+  }
+  .banner-box__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    display: flex;
+    span {
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin: 0 3px;
+      cursor: pointer;
+
+      &.active {
+        background: #fff;
+      }
+
+      &:hover {
+        @extend .active;
+      }
+
+    }
+    
+  }
+}

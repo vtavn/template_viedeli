@@ -1,0 +1,108 @@
+.contact-box {
+  @include section-base;
+  .contact-box__inner {
+    .contact-box__form {
+      height: 100%;
+      background: #808640;
+      color: #fff;
+      padding: 100px 134px;
+
+      h2 {
+        text-align: center;
+        font-size: 2.78rem;
+        font-weight: 200;
+        color: #fff;
+        margin-bottom: 43px;
+      }
+
+      input{
+        width: 100%;
+        padding: 20px 65px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: #3a3a3a;
+      }
+
+      .form-input{
+        margin-bottom: 22px;
+        position: relative;
+
+        &::before{
+          content: '';
+          display: block;
+          float: left;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          color: #333;
+          left: 18px;
+          top: 15px;
+        }
+
+        &.username::before{
+          content: "";
+          background: url('../images/user-icon.png') no-repeat;
+        }
+        &.email::before{
+          content: "";
+          background: url('../images/email-icon.png') no-repeat;
+        }
+        &.phone::before{
+          content: "";
+          background: url('../images/phone-contact.png') no-repeat;
+        }
+      }
+
+      
+    }
+    .contact-box__bg {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .contact-box__footer {
+      display: flex;
+      .contact-box__submit {
+        color: #fff;
+        background: #242424;
+        padding: 14px 30px;
+        margin-right: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 400;
+        word-spacing: 3px;
+        letter-spacing: 2px;
+      }
+      .contact-box__hotline{
+        display: flex;
+        &::before{
+            content: '';
+            display: block;
+            width: 31px;
+            height: 31px;
+            background: url('../images/hotline-icon-contact.png') no-repeat;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        span{
+            display: block;
+            text-transform: uppercase;
+  
+            &:first-child{
+                color: #fff;
+                font-size: 0.92rem;
+            }
+  
+            &:last-child{
+                color: #fff;
+                font-size: 1.42rem;
+                font-weight: bold;
+            }
+        }
+    }
+    }
+  }
+
+}

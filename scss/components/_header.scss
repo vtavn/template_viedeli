@@ -1,0 +1,58 @@
+.header{
+
+  padding: 28px 0;
+  position: relative;
+
+  .header__logo{
+      position: absolute;
+      top: 0;
+      z-index: 5;
+  }
+
+  .header__menu{
+
+      margin-top: 15px;
+
+      ul{
+          display: flex;
+          li{
+              a{
+                  display: block;
+                  padding: 0 20px;
+                  text-transform: uppercase;
+              }
+          }
+      }
+  }
+
+  .header__hotline{
+
+      display: flex;
+
+      &::before{
+          content: '';
+          display: block;
+          width: 31px;
+          height: 31px;
+          background: url('../images/phone-icon.png') no-repeat;
+          margin-top: 10px;
+          margin-right: 10px;
+      }
+
+      span{
+          display: block;
+          text-transform: uppercase;
+
+          &:first-child{
+              color: #767676;
+              font-size: 0.92rem;
+          }
+
+          &:last-child{
+              color: $primaryColor;
+              font-size: 1.42rem;
+              font-weight: bold;
+          }
+      }
+  }
+}

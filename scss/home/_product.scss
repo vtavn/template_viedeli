@@ -1,0 +1,49 @@
+.product-box {
+  @include section-base;
+  background: url('../images/product-bg.png') no-repeat center 10px;
+  background-size: 100%;
+  h2 {
+    text-align: center;
+    font-size: 2.14rem;
+    font-weight: normal;
+    color: #403c34;
+    span {
+      color: $primaryColor;
+      font-family: Fontbox;
+      font-size: 5.14rem;
+      margin: 0 10px;
+    }
+  }
+
+  .product-box__inner {
+    @include center(90%);
+    position: relative;
+    .product-box--item {
+      text-align: center;
+      .item__name {
+        font-size: 2.14rem;
+        font-weight: bold;
+      }
+      .item__category {
+        color: $primaryColor;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .item__price {
+        font-size: 1.28rem;
+      }
+    }
+    .product-box__controls {
+      .product-box__controls--prev{
+        @include vertical-middle(30%);
+        left: 0;
+        @include arrow-button();
+      }
+      .product-box__controls--next{
+        @include vertical-middle(30%);
+        right: 0;
+        @include arrow-button();
+      }
+    }
+  }
+}
