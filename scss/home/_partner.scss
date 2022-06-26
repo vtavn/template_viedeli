@@ -12,6 +12,9 @@
 
   .partner-box__inner {
     @include center(90%);
+    .row {
+      align-items: center;
+    }
     .partner-box--item {
       .item__logo {
         display: flex;

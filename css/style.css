@@ -59,14 +59,34 @@ p {
   margin-bottom: 15px;
 }
 
+/* Mobile : < 740px */
+/* Table:  width >= 740px and width < 1024px */
+/* PC: width >= 1024px */
+@media only screen and (max-width: 739px) {
+  .container {
+    margin: 0 10px;
+  }
+}
 .header {
   padding: 28px 0;
   position: relative;
 }
 .header .header__logo {
+  display: flex;
+}
+.header .header__logo img {
   position: absolute;
   top: 0;
   z-index: 5;
+}
+@media only screen and (max-width: 739px) {
+  .header .header__logo {
+    justify-content: center;
+  }
+  .header .header__logo img {
+    max-width: 65px;
+    margin-top: 10px;
+  }
 }
 .header .header__menu {
   margin-top: 15px;
@@ -78,6 +98,34 @@ p {
   display: block;
   padding: 0 20px;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 739px) {
+  .header .header__menu ul li {
+    padding: 10px;
+  }
+  .header .header__menu ul li:first-child {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 739px) {
+  .header .header__menu ul {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 739px) {
+  .header .header__menu {
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    top: -19px;
+    right: 0;
+    background: #fff;
+    width: 87%;
+    height: 1046px;
+    overflow: visible;
+    transition: all 0.4s ease-in-out;
+    box-shadow: -5px 1px 19px 2px;
+  }
 }
 .header .header__hotline {
   display: flex;
@@ -104,6 +152,40 @@ p {
   font-size: 1.42rem;
   font-weight: bold;
 }
+@media only screen and (max-width: 739px) {
+  .header .header__hotline {
+    display: none;
+  }
+}
+.header #toggle-menu, .header .header__search {
+  display: none;
+}
+.header .header__toggle {
+  display: none;
+}
+.header .header__toggle label {
+  font-size: 20px;
+  background: transparent;
+  border: 1px solid #808640;
+  color: #808640;
+  padding: 5px 10px;
+}
+.header #toggle-menu:checked ~ .header__menu {
+  opacity: 1;
+}
+@media only screen and (max-width: 739px) {
+  .header {
+    padding: 13px 15px;
+  }
+  .header .header__toggle,
+.header .header__search {
+    display: flex;
+    align-items: center;
+  }
+  .header .header__search {
+    justify-content: flex-end;
+  }
+}
 
 .footer {
   margin: 23px 0;
@@ -115,6 +197,9 @@ p {
 .footer p {
   font-size: 1rem;
   color: #64625f;
+}
+.footer .footer__info {
+  padding: 10px;
 }
 .footer .footer__form {
   margin-bottom: 35px;
@@ -148,6 +233,12 @@ p {
 .footer .footer__social i {
   color: #2b2c1d;
   margin-right: 31px;
+}
+@media only screen and (max-width: 739px) {
+  .footer .footer__logo {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .banner-box {
@@ -369,6 +460,9 @@ p {
   text-transform: uppercase;
   margin-bottom: 53px;
 }
+.news-box .news-box__inner .news-box--item {
+  margin: 10px;
+}
 .news-box .news-box__inner .news-box--item .item__thumb {
   height: 100%;
 }
@@ -408,6 +502,9 @@ p {
   margin: 0 auto;
   width: 90%;
 }
+.partner-box .partner-box__inner .row {
+  align-items: center;
+}
 .partner-box .partner-box__inner .partner-box--item .item__logo {
   display: flex;
   justify-content: center;
@@ -416,22 +513,33 @@ p {
 .contact-box {
   padding: 30px 0;
 }
+.contact-box .contact-box__inner {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.contact-box .contact-box__inner .contact-box__item {
+  padding: 0;
+}
+.contact-box .contact-box__inner .contact-box__item img {
+  height: 100%;
+  width: 100%;
+}
 .contact-box .contact-box__inner .contact-box__form {
   height: 100%;
   background: #808640;
   color: #fff;
-  padding: 100px 134px;
+  padding: 35px;
 }
 .contact-box .contact-box__inner .contact-box__form h2 {
   text-align: center;
-  font-size: 2.78rem;
+  font-size: 2.4rem;
   font-weight: 200;
   color: #fff;
   margin-bottom: 43px;
 }
 .contact-box .contact-box__inner .contact-box__form input {
   width: 100%;
-  padding: 20px 65px;
+  padding: 13px 9px 14px 50px;
   text-transform: uppercase;
   font-size: 0.85rem;
   color: #3a3a3a;
@@ -448,8 +556,8 @@ p {
   height: 25px;
   position: absolute;
   color: #333;
-  left: 18px;
-  top: 15px;
+  left: 14px;
+  top: 10px;
 }
 .contact-box .contact-box__inner .contact-box__form .form-input.username::before {
   content: "";
@@ -476,7 +584,7 @@ p {
 .contact-box .contact-box__inner .contact-box__footer .contact-box__submit {
   color: #fff;
   background: #242424;
-  padding: 14px 30px;
+  padding: 16px;
   margin-right: 10px;
   cursor: pointer;
   text-transform: uppercase;

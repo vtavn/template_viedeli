@@ -1,0 +1,18 @@
+/* Mobile : < 740px */
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+/* Table:  width >= 740px and width < 1024px */
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width-min) and (max-width: $tablet-width-max) {
+    @content;
+  }
+}
+/* PC: width >= 1024px */
+@mixin pc {
+  @media only screen and (min-width: $pc-width) {
+    @content;
+  }
+}
