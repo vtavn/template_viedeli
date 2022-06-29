@@ -27,9 +27,11 @@
       input {
         width: 100%;
         padding: 13px 9px 14px 50px;
-        text-transform: uppercase;
         font-size: 0.85rem;
-        color: #3a3a3a;
+        &::placeholder {
+          color: #3a3a3a;
+          text-transform: uppercase;
+        }
       }
 
       .form-input {
@@ -48,18 +50,15 @@
           top: 10px;
         }
 
-        &.username::before {
-          content: "";
-          background: url("../images/user-icon.png") no-repeat;
+        // map
+        $icons: (username: 'user-icon.png', email: 'email-icon.png', phone: 'phone-contact.png');
+        @each $name,$image in $icons {
+          &.#{$name}::before {
+            content: "";
+            background: url("../images/"+$image) no-repeat;
+          }
         }
-        &.email::before {
-          content: "";
-          background: url("../images/email-icon.png") no-repeat;
-        }
-        &.phone::before {
-          content: "";
-          background: url("../images/phone-contact.png") no-repeat;
-        }
+
       }
     }
     .contact-box__bg {
@@ -73,14 +72,14 @@
       display: flex;
       .contact-box__submit {
         color: #fff;
-        background: #242424;
+        background: $secondaryColor;
         padding: 16px;
         margin-right: 10px;
-        cursor: pointer;
         text-transform: uppercase;
         font-weight: 400;
         word-spacing: 3px;
         letter-spacing: 2px;
+        cursor: pointer;
       }
       .contact-box__hotline {
         display: flex;
@@ -98,12 +97,12 @@
           text-transform: uppercase;
 
           &:first-child {
-            color: #fff;
+            color: $white;
             font-size: 0.92rem;
           }
 
           &:last-child {
-            color: #fff;
+            color: $white;
             font-size: 1.42rem;
             font-weight: bold;
           }
