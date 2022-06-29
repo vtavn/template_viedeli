@@ -54,6 +54,9 @@
         transition: all 0.4s ease-in-out;
         box-shadow: -5px 1px 19px 2px;
       }
+      .order-end {
+        order: 1;
+      }
   }
 
   .header__hotline{
@@ -106,7 +109,7 @@
   }
 
   @include mobile {
-    padding: 13px 15px;
+    padding: 13px -1px;
     .header__toggle,
     .header__search {
       display: flex;
